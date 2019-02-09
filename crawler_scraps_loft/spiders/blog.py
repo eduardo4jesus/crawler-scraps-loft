@@ -17,8 +17,8 @@ class ComedySpider(scrapy.Spider):
         title = article.css('div > h1::text').extract_first()
         meta = response.css('div.fusion-meta-info-wrapper')
         date_str = meta.css('span')[3].css('::text').extract_first()
-        categories = meta.xpath('a//text()').getall()
-        tags = meta.css('span.meta-tags > a::text').getall()
+        categories = meta.xpath('a//text()').extract()
+        tags = meta.css('span.meta-tags > a::text').extract()
         transcript = article.css('div.post-content > p::text').extract()
         url = response.request.url
 
