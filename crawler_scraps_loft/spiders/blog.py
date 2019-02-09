@@ -19,7 +19,7 @@ class ComedySpider(scrapy.Spider):
         date_str = meta.css('span')[3].css('::text').extract_first()
         categories = meta.xpath('a//text()').extract()
         tags = meta.css('span.meta-tags > a::text').extract()
-        transcript = article.css('div.post-content > p::text').extract()
+        transcript = article.css('div.post-content > p *::text').extract()
         url = response.request.url
 
         item = {
