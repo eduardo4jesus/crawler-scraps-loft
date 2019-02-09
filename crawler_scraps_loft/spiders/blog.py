@@ -3,7 +3,7 @@ import scrapy
 
 
 class ComedySpider(scrapy.Spider):
-    name = 'comedy'
+    name = 'blog'
     allowed_domains = ['scrapsfromtheloft.com']
     start_urls = ['https://scrapsfromtheloft.com/blog/']
 
